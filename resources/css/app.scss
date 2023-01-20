@@ -1,0 +1,21 @@
+@import 'bootstrap/scss/bootstrap';
+
+/* Install */
+.install {
+    background: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-install {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}

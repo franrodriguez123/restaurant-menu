@@ -1,0 +1,22 @@
+@import 'bootstrap/scss/bootstrap';
+
+.toolbar
+{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem 0 1rem 0;
+}
+
+form.main
+{
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+form.destroy
+{
+    display: inline-block;
+}
