@@ -21,8 +21,9 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">Escritorio</a></li>
+                            <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Escritorio</a></li>
                             <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Categorías</a></li>
+                            <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Usuarios</a></li>
                             <li class="nav-item">
                                 <div class="dropdown">
                                     <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,6 +55,12 @@
 
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success mt-2">
+                        {{ $message }}
+                    </div>
+                @endif
+
+                @if ($message = Session::get('warning'))
+                    <div class="alert alert-warning mt-2">
                         {{ $message }}
                     </div>
                 @endif
