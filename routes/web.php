@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,9 @@ Route::prefix('install')->group(function() {
 // Admin
 Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
     
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::resource('users', UsersController::class);
     Route::resource('categories', CategoriesController::class);
 });
 
