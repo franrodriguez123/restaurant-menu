@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\AllergensController;
 use App\Http\Controllers\Admin\UsersController;
 
 /*
@@ -42,6 +43,7 @@ Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
 
     Route::resource('users', UsersController::class);
     Route::resource('categories', CategoriesController::class);
+    Route::resource('allergens', AllergensController::class);
 });
 
 require __DIR__.'/auth.php';
