@@ -21,9 +21,21 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Escritorio</a></li>
-                            <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Categorías</a></li>
-                            <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Usuarios</a></li>
+                            <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link text-dark">Escritorio</a></li>
+
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Carta
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('categories.index') }}">Categorías</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('allergens.index') }}">Alérgenos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link text-dark">Usuarios</a></li>
                             <li class="nav-item">
                                 <div class="dropdown">
                                     <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
