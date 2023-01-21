@@ -24,7 +24,7 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->role_id }}</td>
+                    <td>{{ $user->role_id == \App\Models\User::ADMIN ? 'Administrador' : 'Empleado' }}</td>
                     <td>
                         <x-action-button type="edit" url="{{ route('users.edit', $user) }}"></x-action-button>
                         <x-action-button type="destroy" url="{{ route('users.destroy', $user) }}"></x-action-button>
