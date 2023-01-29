@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InstallController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\AllergensController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
-use App\Http\Controllers\Admin\AllergensController;
-use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\QrcodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\Admin\UsersController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend');
 });
 
 Route::middleware('auth')->group(function () {
@@ -40,6 +41,8 @@ Route::prefix('install')->group(function() {
 Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('qrcode', [QrcodeController::class, 'index'])->name('qrcode');
 
     Route::resource('users', UsersController::class);
     Route::resource('categories', CategoriesController::class);
