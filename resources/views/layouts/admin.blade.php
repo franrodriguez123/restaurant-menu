@@ -36,6 +36,7 @@
                                 </div>
                             </li>
 
+                            <li class="nav-item"><a href="{{ route('company.edit') }}" class="nav-link text-dark">Empresa</a></li>
                             <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link text-dark">Usuarios</a></li>
                             <li class="nav-item">
                                 <div class="dropdown">
