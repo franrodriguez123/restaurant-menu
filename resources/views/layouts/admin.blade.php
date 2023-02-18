@@ -30,6 +30,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('categories.index') }}">Categorías</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('meals.index') }}">Platos</a></li>
                                         <li><a class="dropdown-item" href="{{ route('allergens.index') }}">Alérgenos</a></li>
                                         <li><a class="dropdown-item" href="{{ route('qrcode') }}">Código QR</a></li>
                                     </ul>

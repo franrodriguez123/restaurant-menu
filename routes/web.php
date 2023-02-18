@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstallController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\MealsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\QrcodeController;
 use App\Http\Controllers\Admin\CompanyController;
@@ -47,6 +48,7 @@ Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
 
     Route::resource('users', UsersController::class);
     Route::resource('categories', CategoriesController::class);
+    Route::resource('meals', MealsController::class);
     Route::resource('allergens', AllergensController::class);
     
     Route::get('company', [CompanyController::class, 'edit'])->name('company.edit');
