@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Company extends Model
 {
@@ -26,4 +27,13 @@ class Company extends Model
         'social_instagram',
         'social_youtube',
     ];
+
+    protected function fullAddress(): Attribute
+    {
+        return Attribute::get(function() {
+            return $this->attributes['address'] . ', ' 
+                . $this->attributes['postal_code'] . ' ' . $this->attributes['city'] . ' '
+                . $this->attributes['state'] . ' ' . $this->attributes['country'];
+        });
+    }
 }
