@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,6 +21,7 @@ class InstallController extends Controller
 
     public function finish(Request $request)
     {
+        // Create an user
         $request->validate([
             'name' => 'required',
             'email' => 'required|string|email|unique:users',
@@ -33,6 +35,13 @@ class InstallController extends Controller
         $user = new User();
         $user->fill($data);
         $user->save();
+
+        // Create company info
+        $company = new Company();
+        $company->fill([
+            'name' => 'Your company',
+        ]);
+        $company->save();
 
         return view('install/finish');
     }
