@@ -33,3 +33,9 @@ class UploadPreview
 document.querySelectorAll('input[type="file"]').forEach(element => {
 	new UploadPreview(element);
 });
+
+document.querySelectorAll('select[multiple]').forEach(element => {
+	new window.Choices('select[multiple]', {
+		removeItemButton: true,
+	});
+});
