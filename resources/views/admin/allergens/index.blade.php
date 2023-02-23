@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <table class="table sortable" data-model="category" data-sortable-list-ajax-update-url="{{ route('sortablelist.update') }}">
+    <table class="table sortable" data-model="allergen" data-sortable-list-ajax-update-url="{{ route('sortablelist.update') }}">
         <thead>
             <tr>
                 <th>Id</th>
