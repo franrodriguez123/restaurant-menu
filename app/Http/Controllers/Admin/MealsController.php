@@ -18,7 +18,7 @@ class MealsController extends Controller
     public function index()
     {
         return view('admin.meals.index', [
-            'meals' => Meal::all(),
+            'meals' => Meal::orderBy('order')->get(),
         ]);
     }
 

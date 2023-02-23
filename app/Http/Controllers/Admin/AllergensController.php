@@ -15,8 +15,9 @@ class AllergensController extends Controller
      */
     public function index()
     {
-        $allergens = Allergen::all();
-        return view('admin.allergens.index', ['allergens' => $allergens]);
+        return view('admin.allergens.index', [
+            'allergens' => Allergen::orderBy('order')->get()
+        ]);
     }
 
     /**
