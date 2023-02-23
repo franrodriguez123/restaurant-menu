@@ -15,6 +15,7 @@ class Meal extends Model
         'name',
         'description',
         'price',
+        'order',
     ];
 
     public function category()

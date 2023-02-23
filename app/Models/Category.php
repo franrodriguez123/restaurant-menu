@@ -11,11 +11,12 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'order',
     ];
 
     public function meals()
     {
-        return $this->oneToMany(Meal::class);
+        return $this->hasMany(Meal::class);
     }
 }
