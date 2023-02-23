@@ -1,0 +1,81 @@
+section.menu
+{
+	background: #EDD892;
+	mix-blend-mode: multiply;
+
+	.content-wrapper-sm
+	{
+		width: 500px;
+		max-width: 100%;
+
+		@include mobile {
+			width: 100%;
+		}
+	}
+	
+	.meal
+	{
+		display: flex;
+		flex-flow: column;
+		text-align: left;
+		
+		.line1
+		{
+			display: flex;
+			flex-flow: row;
+			justify-content: space-between;
+			font-size: $font-size-lg;
+			
+			.name
+			{
+				font-weight: bold;
+			}
+			
+			.price
+			{
+				display: block;
+				text-align: right;
+				font-weight: bold;
+
+				@include mobile {
+					margin-left: 1rem;
+					min-width: 100px;
+				}
+			}
+		}
+		
+		.line2
+		{
+			margin-bottom: 2rem;
+			
+			.desc
+			{
+				font-size: $font-size-base;
+			}
+			
+			.allergens
+			{
+				display: block;
+				
+				.allergen
+				{
+					font-size: $font-size-sm;
+					text-transform: uppercase;
+					opacity: .75;
+					
+					&::after
+					{
+						display: inline-block;
+						content: '·';
+						padding: 0 .5rem;
+					}
+					
+					&:last-child::after
+					{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

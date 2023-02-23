@@ -1,0 +1,15 @@
+section[data-layout="hero"]
+{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+	height: 70vh;
+	background: #ffffff88;
+	
+	.logo
+	{
+		width: 400px;
+		max-width: 90%;
+	}
+}

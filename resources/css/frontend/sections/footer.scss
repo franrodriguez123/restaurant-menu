@@ -1,0 +1,35 @@
+footer
+{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 2.6rem 1rem;
+	
+	a
+	{
+		&::after
+		{
+			font-weight: bold;
+			content: '·';
+			display: inline-block;
+			padding: 0 10px;
+		}
+		
+		&:last-child::after
+		{
+			display: none;
+		}
+	}
+	
+	.social
+	{
+		padding-bottom: 1rem;
+	}
+	
+	.links, .copyright
+	{
+		font-size: $font-size-sm;
+	}
+}

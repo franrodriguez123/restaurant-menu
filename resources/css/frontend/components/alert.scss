@@ -1,0 +1,22 @@
+.alert
+{
+    display: block;
+    border-radius: $border-radius;
+    padding: 10px 20px;
+    border: 1px solid;
+    margin-bottom: 15px;
+    
+    &.alert-danger
+    {
+        border-color: darken($color-danger, 30);
+        color: darken($color-danger, 30);
+        background: lighten($color-danger, 35)
+    }
+
+    &.alert-success
+    {
+        border-color: darken($color-success, 30);
+        color: darken($color-success, 30);
+        background: lighten($color-success, 35)
+    }
+}

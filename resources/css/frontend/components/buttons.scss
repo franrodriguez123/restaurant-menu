@@ -1,0 +1,105 @@
+@mixin button-base()
+{
+	display: inline-block;
+	padding: .75rem 1.25rem;
+	border-width: 1px;
+	border-style: solid;
+	text-decoration: none !important;
+	border-radius: $border-radius;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+	
+	&:focus
+	{
+		box-shadow: 0 0px 0px 3px;
+	}
+
+	&:disabled
+	{
+		cursor: not-allowed;
+		opacity: .5;
+	}
+}
+
+.btn-default
+{
+	@include button-base();
+	background: transparent;
+	
+	&.btn-light
+	{
+		color: #fff;
+		border-color: #fff;
+		
+		&:active:not([disabled])
+		{
+			color: #333;
+			background: #fff;
+		}
+		
+		&:hover:not([disabled])
+		{
+			background: #ffffff44;
+		}
+	}
+	
+	&.btn-dark
+	{
+		color: #333;
+		border-color: #333;
+		
+		&:active:not([disabled])
+		{
+			color: #fff;
+			background: #333;
+		}
+		
+		&:hover:not([disabled])
+		{
+			background: #33333344;
+		}
+	}
+}
+
+.btn-primary
+{
+	@include button-base();
+
+	&.btn-light
+	{
+		background: #fff;
+		border-color: #fff;
+		color: #333;
+		
+		&:active:not([disabled])
+		{
+			color: #fff;
+			background: #333;
+		}
+		
+		&:hover:not([disabled])
+		{
+			background: #ffffff44;
+		}
+	}
+	
+	&.btn-dark
+	{
+		background: #333;
+		border-color: #333;
+		color: #fff;
+		
+		&:active:not([disabled])
+		{
+			color: #fff;
+			background: #333;
+		}
+		
+		&:hover:not([disabled])
+		{
+			background: #33333344;
+		}
+	}
+}

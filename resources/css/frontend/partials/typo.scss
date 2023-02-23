@@ -1,0 +1,84 @@
+body
+{
+	font-family: $font-family;
+	font-size: $font-size-base;
+	font-weight: $text-font-weight;
+	color: $text-color-dark;
+	line-height: $line-height;
+}
+
+p, button, input, textarea
+{
+	font-family: $font-family;
+	font-size: $font-size-base;
+	color: $text-color-dark;
+}
+
+h1.hero
+{
+	font-size: $h1-font-size * 2;
+	font-weight: bold;
+}
+
+h1
+{
+	font-family: $headings-font-family;
+	font-size: $h1-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+h2
+{
+	font-family: $headings-font-family;
+	font-size: $h2-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+h3
+{
+	font-family: $headings-font-family;
+	font-size: $h3-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+h4
+{
+	font-family: $headings-font-family;
+	font-size: $h4-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+h5
+{
+	font-family: $headings-font-family;
+	font-size: $h5-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+h6
+{
+	font-family: $headings-font-family;
+	font-size: $h6-font-size;
+	font-weight: $headings-font-weight;
+	color: $headings-color-dark;
+}
+
+section[data-bg="dark"]
+{
+	color: $text-color-light;
+	
+	h1, h2, h3, h4, h5, h6
+	{
+		color: $headings-color-light;
+	}
+	
+	a, p, label
+	{
+		color: $text-color-light;
+	}
+}

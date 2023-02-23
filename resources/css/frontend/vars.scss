@@ -1,0 +1,27 @@
+$font-family: "Noto Serif Toto", serif !default;
+$font-size-lg: 1.2rem !default;
+$font-size-base: 1rem !default;
+$font-size-sm: 0.75rem !default;
+
+$headings-font-family: "Raleway", sans-serif !default;
+$headings-color-dark: #000 !default;
+$headings-color-light: #fff !default;
+$headings-font-weight: 300 !default;
+
+$text-color-dark: #333 !default;
+$text-color-light: #ffffffcc !default;
+$text-font-weight: normal !default;
+
+$h1-font-size: $font-size-base * 1.75;
+$h2-font-size: $font-size-base * 1.55;
+$h3-font-size: $font-size-base * 1.4;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base;
+$h6-font-size: $font-size-base * 0.9;
+
+$line-height: 1.5;
+
+$border-radius: 4px;
+
+$color-danger: #dc3545;
+$color-success: #198754;

@@ -1,0 +1,50 @@
+.form-group
+{
+	margin-bottom: 1rem;
+	
+	label
+	{
+		display: block;
+	}
+}
+
+.form-control
+{
+	display: block;
+	width: 100%;
+	padding: .5rem .75rem;
+	font-size: $font-size-base;
+	color: $text-color-dark;
+	background: #ffffffcc;
+	border-radius: $border-radius;
+	border: 1px solid transparent;
+	box-sizing: border-box;
+	
+	&:focus
+	{
+		background: #fff;
+		box-shadow: 0 0px 0px 3px #ffffff88;
+		outline: none;
+	}
+}
+
+textarea.form-control
+{
+	min-height: 50px;
+}
+
+.form-control.error
+{
+	border-color: $color-danger;
+}
+
+.error-message
+{
+	display: inline-block;
+	font-size: $font-size-sm;
+	color: #fff;
+	background: $color-danger;
+	padding: 3px 5px;
+	position: relative;
+	top: -1px;
+}
