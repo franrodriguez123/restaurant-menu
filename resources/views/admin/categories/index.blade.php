@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <table class="table">
+    <table class="table sortable" data-model="category" data-sortable-list-ajax-update-url="{{ route('sortablelist.update') }}">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,7 +19,7 @@
         <tbody>
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->id }}</td>
+                    <td class="id">{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
                         <x-action-button type="edit" url="{{ route('categories.edit', $category) }}"></x-action-button>
