@@ -20,3 +20,6 @@ try {
 import Choices from 'choices.js';
 import '/node_modules/choices.js/public/assets/styles/choices.css'
 window.Choices = Choices;
+
+import Sortable from 'sortablejs';
+window.Sortable = Sortable;
