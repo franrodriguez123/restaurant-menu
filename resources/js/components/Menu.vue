@@ -9,8 +9,10 @@
             </div>
             <div class="line2">
                 <span class="desc">{{ meal.description }}</span>
-                <div class="allergens" v-for="allergen in meal.allergens">
-                    <span class="allergen">{{ allergen.name }}</span>
+                <div class="allergens">
+                    <span class="allergen" v-for="allergen in meal.allergens">
+                        {{ allergen.name }}
+                    </span>
                 </div>
             </div>
         </div>
