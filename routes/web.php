@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\AllergensController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Admin\SortablelistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +25,9 @@ use App\Http\Controllers\Admin\CategoriesController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend');
-});
+Route::middleware(['check_app_installation'])->get('/', [FrontendController::class, 'index']);
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['check_app_installation', 'auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -40,7 +41,7 @@ Route::prefix('install')->group(function() {
 });
 
 // Admin
-Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
+Route::middleware(['check_app_installation', 'auth', 'access'])->prefix('admin')->group(function() {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -53,6 +54,11 @@ Route::middleware(['auth', 'access'])->prefix('admin')->group(function() {
     
     Route::get('company', [CompanyController::class, 'edit'])->name('company.edit');
     Route::put('company', [CompanyController::class, 'update'])->name('company.update');
+
+    Route::put('sortablelist', [SortablelistController::class, 'update'])->name('sortablelist.update');
 });
+
+// Contact
+Route::post('/contact', [ContactController::class, 'index'])->name('api.contact');
 
 require __DIR__.'/auth.php';
