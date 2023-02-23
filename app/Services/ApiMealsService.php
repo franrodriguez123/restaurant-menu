@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Meal;
+use App\Models\Allergen;
 use App\Models\Category;
 
 class ApiMealsService
@@ -10,17 +12,17 @@ class ApiMealsService
     {
         $result = [];
 
-        if($categories = Category::all())
+        if($categories = Category::orderBy('order')->get())
         {
             foreach($categories as $category)
             {
                 $meals = [];
 
-                foreach($category->meals as $meal)
+                foreach($category->meals()->orderBy('order')->get() as $meal)
                 {
                     $allergens = [];
 
-                    foreach($meal->allergens as $allergen)
+                    foreach($meal->allergens()->orderBy('order')->get() as $allergen)
                     {
                         $allergens[] = ['name' => $allergen->name];
                     }
