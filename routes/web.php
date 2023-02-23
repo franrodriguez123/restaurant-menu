@@ -36,6 +36,7 @@ Route::middleware(['check_app_installation', 'auth'])->group(function () {
 // Install Controller
 Route::prefix('install')->group(function() {
     Route::get('index', [InstallController::class, 'index'])->name('install.index');
+    Route::get('company', [InstallController::class, 'company'])->name('install.company');
     Route::get('user', [InstallController::class, 'user'])->name('install.user');
     Route::get('finish', [InstallController::class, 'finish'])->name('install.finish');
 });

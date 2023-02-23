@@ -5,14 +5,12 @@
         <div class="container">
             <div class="pt-5 pb-5">
                 <div class="card card-install">
-                    <form action="{{ route('install.finish') }}" method="get">
+                    <form action="{{ route('install.user') }}" method="get">
                         @csrf
-                        <input type="hidden" name="company_name" value="{{ request()->get('company_name') }}">
-                        <input type="hidden" name="company_email" value="{{ request()->get('company_email') }}">
-
                         <div class="card-body">
-                            <h1>Agregar usuario</h1>
-                            <p>Vamos a crear el primer usuario de tipo administrador</p>
+                            <h1>Empresa</h1>
+                            <p>Datos básicos de tu empresa. 
+                                Podrás completar la información de tu empresa una vez y hayas iniciado sesión.</p>
 
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -25,20 +23,16 @@
                             @endif
 
                             <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" name="name" value="" required autofocus>
+                                <label>Nombre de tu empresa</label>
+                                <input type="text" class="form-control" name="company_name" value="" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" name="email" value="" placeholder="ejemplo@email.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Contraseña</label>
-                                <input type="password" class="form-control" name="password" required>
+                                <label>Email de contacto</label>
+                                <input type="email" class="form-control" name="company_email" value="" placeholder="ejemplo@email.com" required>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <input type="submit" class="btn btn-primary" value="Terminar">
+                            <input type="submit" class="btn btn-primary" value="Continuar">
                         </div>
                     </form>
                 </div>

@@ -10,7 +10,7 @@
                         <p>Vamos a configurar la aplicación por primera vez</p>
                     </div>
                     <div class="card-footer bg-transparent">
-                        <a href="{{ route('install.user') }}" class="btn btn-primary">Empezar</a>
+                        <a href="{{ route('install.company') }}" class="btn btn-primary">Empezar</a>
                     </div>
                 </div>
             </div>

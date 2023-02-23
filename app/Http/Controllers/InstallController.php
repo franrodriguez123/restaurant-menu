@@ -19,6 +19,11 @@ class InstallController extends Controller
         return view('install/user');
     }
 
+    public function company()
+    {
+        return view('install/company');
+    }
+
     public function finish(Request $request)
     {
         // Create an user
@@ -39,7 +44,8 @@ class InstallController extends Controller
         // Create company info
         $company = new Company();
         $company->fill([
-            'name' => 'Your company',
+            'name' => $data['company_name'],
+            'email' => $data['company_email'],
         ]);
         $company->save();
 
