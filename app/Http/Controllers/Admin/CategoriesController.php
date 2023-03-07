@@ -84,6 +84,12 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+        if($category->meals()->count())
+        {
+            return redirect()->route('categories.index')
+                ->with('warning', 'No puedes eliminar esta categoría ya que hay platos vinculados');
+        }
+
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Elemento borrado correctamente');
     }
