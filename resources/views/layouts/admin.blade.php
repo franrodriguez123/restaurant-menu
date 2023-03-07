@@ -38,7 +38,9 @@
                             </li>
 
                             <li class="nav-item"><a href="{{ route('company.edit') }}" class="nav-link text-dark">Empresa</a></li>
+                            @if(Auth::user()->role_id == \App\Models\User::ADMIN)
                             <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link text-dark">Usuarios</a></li>
+                            @endif
                             <li class="nav-item">
                                 <div class="dropdown">
                                     <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

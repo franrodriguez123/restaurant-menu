@@ -23,7 +23,7 @@ class CheckUserAccess
         
         if(Auth::check()) {
             if(
-                in_array($controller, config('permissions.' . Auth::user()->role_id))
+                !in_array($controller, config('permissions.' . Auth::user()->role_id))
                 and Auth::user()->role_id != User::ADMIN
             ) {
                 abort(401);
