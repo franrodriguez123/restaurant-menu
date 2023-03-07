@@ -22,7 +22,7 @@
                 <tr>
                     <td class="id">{{ $meal->id }}</td>
                     <td>{{ $meal->name }}</td>
-                    <td>{{ $meal->name }}</td>
+                    <td>{{ $meal->category->name }}</td>
                     <td>
                         <x-action-button type="edit" url="{{ route('meals.edit', $meal) }}"></x-action-button>
                         <x-action-button type="destroy" url="{{ route('meals.destroy', $meal) }}"></x-action-button>
